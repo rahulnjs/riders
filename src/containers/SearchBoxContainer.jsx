@@ -96,7 +96,7 @@ const SearchBoxContainer = () => {
     };
 
     axios
-      .post(`${process.env.REACT_APP_API_URL}/trip`, trip, {})
+      .post(`${process.env.REACT_APP_RIDERS_API_URL}/trip`, trip, {})
       .then(({ data }) => {
         //window.history.pushState({}, "", `/?trip=${data.uuid}&join=true`);
         window.localStorage.setItem("_cu_", "rahul");

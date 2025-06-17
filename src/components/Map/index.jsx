@@ -43,7 +43,7 @@ const Map = ({ origin, destination, travelMode, routes }) => {
 
   return (
     <Gmap
-      mapId={process.env.REACT_APP_GOOGLE_MAP_ID}
+      mapId={process.env.REACT_APP_RIDERS_GOOGLE_MAP_ID}
       defaultZoom={onTrip ? DEFAULT_MAP_ZOOM_ON_TRIP : DEFAULT_MAP_ZOOM}
       defaultCenter={
         currentLocation ? JSON.parse(currentLocation) : DEFAULT_MAP_CENTER

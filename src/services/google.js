@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const DIRECTION_API_URL = 'https://routes.googleapis.com/directions/v2:computeRoutes';
 const NEARBY_LOCATION_URL = 'https://places.googleapis.com/v1/places:searchNearby'
-const API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
+const API_KEY = process.env.REACT_APP_RIDERS_GOOGLE_API_KEY;
 
 const getHeaders = () => ({
   'x-goog-api-key': API_KEY,

@@ -74,16 +74,19 @@ const App = () => {
                 name: person,
               });
               axios
-                .post(`${process.env.REACT_APP_API_URL}/trip/${trip}/rider`, {
-                  riderId: person,
-                  riderData: {
-                    cLoc: { lng, lat },
-                    iLoc: { lng, lat },
-                    lastUpdated: new Date().getTime(),
-                    createdAt: new Date().getTime(),
-                    name: person,
-                  },
-                })
+                .post(
+                  `${process.env.REACT_APP_RIDERS_API_URL}/trip/${trip}/rider`,
+                  {
+                    riderId: person,
+                    riderData: {
+                      cLoc: { lng, lat },
+                      iLoc: { lng, lat },
+                      lastUpdated: new Date().getTime(),
+                      createdAt: new Date().getTime(),
+                      name: person,
+                    },
+                  }
+                )
                 .then((d) => {})
                 .catch(console.error);
               fetchTripAndProceed(trip, lat, lng);
@@ -104,7 +107,7 @@ const App = () => {
 
   const fetchTripAndProceed = (trip, lat, lng) => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/trip/${trip}`)
+      .get(`${process.env.REACT_APP_RIDERS_API_URL}/trip/${trip}`)
       .then(({ data }) => {
         if (haveIMoved({ lat, lng })) {
           getDirections({
@@ -136,7 +139,7 @@ const App = () => {
         }
       });
     axios
-      .put(`${process.env.REACT_APP_API_URL}/trip/${trip}/rider`, {
+      .put(`${process.env.REACT_APP_RIDERS_API_URL}/trip/${trip}/rider`, {
         riderId: window.localStorage.getItem("_cu_"),
         cLoc: { lng, lat },
         lastUpdated: new Date().getTime(),
@@ -188,7 +191,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <APIProvider apiKey={process.env.REACT_APP_GOOGLE_API_KEY}>
+      <APIProvider apiKey={process.env.REACT_APP_RIDERS_GOOGLE_API_KEY}>
         {!search.trip && (
           <div className="control-pannel">
             <SearchBoxContainer />
