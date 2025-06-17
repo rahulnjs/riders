@@ -1,0 +1,40 @@
+.polyline-info-window {
+  display: flex;
+  gap: 10px;
+  margin-top: 0;
+  min-width: 70px;
+
+  .action {
+    button {
+      background-color: white;
+      cursor: pointer;
+      border: none;
+      color: gray;
+    }
+  }
+
+  .content {
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    b {
+      font-size: 13px;
+      margin-top: 9px;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    img {
+      max-width: 25px;
+    }
+
+    .distanceMeters {
+      text-align: left;
+    }
+  }
+}

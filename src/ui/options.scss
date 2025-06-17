@@ -1,0 +1,44 @@
+.options-pane {
+  height: 64px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #fff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  box-shadow: 6px 1px 16px 9px #00000096;
+
+  .option:nth-child(2) {
+    border-left: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+  }
+
+  .trip-duration {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #5233ff;
+  }
+
+  .trip-distance {
+    font-size: 0.8rem;
+  }
+
+  .trip-settings {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+
+    .settings-wrapper {
+      width: fit-content;
+      margin: 0px auto;
+      padding: 10px;
+      border-radius: 5px;
+
+      &:hover {
+        background-color: #ebebeb;
+        cursor: pointer;
+      }
+    }
+  }
+}
